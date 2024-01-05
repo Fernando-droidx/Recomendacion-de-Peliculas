@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+from surprise import Dataset
+from surprise.model_selection import train_test_split
 
 #Cargamos los datos
 def cargar_datos():
@@ -46,3 +48,10 @@ def recomendacion_popularidad(ratings, movies, n=5):
                                     index=peliculas_populares.index)
 
     return peliculas_populares
+
+
+def filtrado_colaborativo(ratings, movies, n=5):
+    datos = Dataset.load_builtin('ml-latest-small')
+    #Entrenando el modelo
+    #Aquí, el 80% de los datos se usarán para entrenar el modelo y el 20% se usará para evaluar su rendimiento.
+    trainset, testset = train_test_split(datos, test_size=0.2, random_state=42)
