@@ -1,13 +1,29 @@
+from data_loader import cargar_datos
+from recomendation import entrenar_modelo
 
-from data_explorer import cargar_datos, eda,recomendacion_popularidad
+# Cargar datos
+ruta_ratings = 'data/ml-latest-small/ratings.csv'
+data = cargar_datos(ruta_ratings)
 
-movies, ratings = cargar_datos()
-eda(movies, ratings)
+# Entrenar el modelo
+ruta_ratings = 'data/ml-latest-small/ratings.csv'
+modelo_entrenado, trainset = entrenar_modelo(ruta_ratings)
 
+# Obtener las mejores N recomendaciones para un usuario específico
+usuario_id = 1
+n = 10
+recomendaciones_usuario = []
 
-peliculas_populares = recomendacion_popularidad(ratings, movies, n=5)
+for movie_id in trainset.all_items():
+    prediction = modelo_entrenado.predict(usuario_id, movie_id)
+    recomendaciones_usuario.append((movie_id, prediction.est))
 
-# Imprimir las películas recomendadas
-print("Películas Populares Recomendadas:")
-print(peliculas_populares)
+# Ordenar las recomendaciones por score
+recomendaciones_usuario.sort(key=lambda x: x[1], reverse=True)
 
+# Obtener las primeras N recomendaciones
+top_recomendaciones = recomendaciones_usuario[:n]
+
+print(f"Top {n} recomendaciones para el usuario {usuario_id}:")
+for movie_id, score in top_recomendaciones:
+    print(f"Película ID: {movie_id}, Score: {score}")
