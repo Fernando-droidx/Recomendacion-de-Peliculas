@@ -35,6 +35,13 @@ El sistema de recomendación se construye utilizando Python y algunas biblioteca
 - `datos/`: Directorio que contiene conjuntos de datos necesarios para el proyecto.
 
 
+# Contribuciones
+¡Contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, simplemente realiza un fork del repositorio, 
+implementa tus cambios y crea un pull request.
+# Licencia
+Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
+Este código Markdown proporciona la estructura básica para un archivo `README.md` y puedes ajustarlo según las necesidades específicas de tu proyecto. ¡Espero que sea de utilidad!
+
 ## Funcionalidades Implementadas
 
 ### 1. Análisis Exploratorio de Datos (EDA)
@@ -50,10 +57,4 @@ El sistema de recomendación se construye utilizando Python y algunas biblioteca
 git clone https://github.com/tu_usuario/Recomendacion-de-Peliculas.git
 cd Recomendacion-de-Peliculas
 
-# Contribuciones
-¡Contribuciones son bienvenidas! Si tienes ideas para mejorar este proyecto, simplemente realiza un fork del repositorio, 
-implementa tus cambios y crea un pull request.
-# Licencia
-Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
-Este código Markdown proporciona la estructura básica para un archivo `README.md` y puedes ajustarlo según las necesidades específicas de tu proyecto. ¡Espero que sea de utilidad!
 
