@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <h2>Top Movie Recommendations for User {{ user_id }}</h2>
+    <ul>
+        {% for movie_id, score in recommendations.items() %}
+            <li>{{ movie_id }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html>
