@@ -6,6 +6,17 @@ Este proyecto tiene como objetivo desarrollar un sistema de recomendación de pe
 
 El sistema de recomendación se construye utilizando Python y algunas bibliotecas populares como scikit-learn y pandas. El proyecto también incluirá una interfaz de usuario simple para que los usuarios puedan ingresar sus preferencias y recibir recomendaciones personalizadas.
 
+## Estado Actual
+
+- **Exploración de Datos:**
+  - Se han realizado análisis estadísticos sobre el conjunto de datos de películas y calificaciones.
+
+- **Filtrado Colaborativo:**
+  - Se ha implementado un modelo de filtrado colaborativo utilizando la biblioteca Surprise.
+
+- **Interfaz de Usuario:**
+  - Se ha creado una interfaz web básica para que los usuarios interactúen con el sistema de recomendación.
+
 ## Instalación
 
 1. Clona este repositorio en tu máquina local:
