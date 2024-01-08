@@ -1,13 +1,13 @@
-from data_loader import cargar_datos
-from recomendation import entrenar_modelo
+
+from recomendation import entrenar_modelo, cargar_datos
 
 # Cargar datos
 ruta_ratings = 'data/ml-latest-small/ratings.csv'
-data = cargar_datos(ruta_ratings)
+ruta_peliculas = 'data/ml-latest-small/movies.csv'
+data_ratings, data_movies, nombres_peliculas = cargar_datos(ruta_ratings, ruta_peliculas)
 
 # Entrenar el modelo
-ruta_ratings = 'data/ml-latest-small/ratings.csv'
-modelo_entrenado, trainset = entrenar_modelo(ruta_ratings)
+modelo_entrenado, trainset, data_movies = entrenar_modelo(data_ratings, data_movies)
 
 # Obtener las mejores N recomendaciones para un usuario específico
 usuario_id = 1
