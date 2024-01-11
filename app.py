@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Cargar datos
 ruta_ratings = 'data/ml-latest-small/ratings.csv'
 ruta_peliculas = 'data/ml-latest-small/movies.csv'
+
 data_ratings, data_movies = cargar_datos(ruta_ratings, ruta_peliculas)
 
 # Entrenar el modelo

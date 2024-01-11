@@ -1,11 +1,9 @@
-# En tu archivo recomendation.py
 
-from surprise.model_selection import train_test_split
 from surprise import SVD
 from surprise import Dataset
 from surprise import Reader
 import pandas as pd
-from utils import obtener_nombre_pelicula
+
 
 def cargar_datos(ruta_ratings, ruta_peliculas):
     # Obtener solo las columnas necesarias de tu archivo de películas
@@ -29,6 +27,7 @@ def entrenar_modelo(data_ratings):
 
 def hacer_predicciones(modelo_entrenado, user_id, data_movies):
     # Obtener ítems aún no calificados por el usuario
+    print(data_movies)
     items_no_calificados = [item for item in data_movies['movieId'] if item not in modelo_entrenado.trainset.ur[user_id]]
 
     # Hacer predicciones para los ítems no calificados

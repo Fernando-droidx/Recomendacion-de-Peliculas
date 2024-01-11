@@ -1,5 +1,5 @@
 import pandas as pd
-
+#Expresar datos en pandas
 def cargar_nombres_peliculas(ruta_peliculas):
     peliculas_df = pd.read_csv(ruta_peliculas)
     nombres_peliculas = dict(zip(peliculas_df['movieId'], peliculas_df['title']))
